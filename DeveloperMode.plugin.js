@@ -1,10 +1,10 @@
 /**
  * @name DeveloperMode
  * @author DEATHB4DEFEAT
- * @version 1.0.11
+ * @version 1.1.3
  * @description Improves the default icons next to statuses
- * @source https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/DeveloperMode.js
- * @updateUrl https://raw.githubusercontent.com/BetterDiscordStuff/DeveloperMode.js
+ * @source https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js
  * @invite 49KeKwXc8g
  */
 
@@ -17,8 +17,10 @@ module.exports = (() => {
 					name: 'DEATHB4DEFEAT',
 				},
 			],
-			version: '1.0.11',
+			version: '1.1.3',
 			description: 'Makes you able to view the special Discord developer options.',
+			github: 'https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js',
+			github_raw: 'https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js',
 		},
 	};
 
