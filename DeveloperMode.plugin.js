@@ -1,7 +1,7 @@
 /**
  * @name DeveloperMode
  * @author DEATHB4DEFEAT
- * @version 1.1.4
+ * @version 1.2.1
  * @description Makes you able to view the special Discord developer options.
  * @source https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js
  * @updateUrl https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js
@@ -17,7 +17,7 @@ module.exports = (() => {
 					name: 'DEATHB4DEFEAT',
 				},
 			],
-			version: '1.1.4',
+			version: '1.2.1',
 			description: 'Makes you able to view the special Discord developer options.',
 			github: 'https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js',
 			github_raw: 'https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js',
@@ -33,8 +33,8 @@ module.exports = (() => {
 			};
 			webpackChunkdiscord_app.push([['wp_isdev_patch'], {}, window.___wp]);
 		}
-        function stop() {}
-        this.start = start;
-        this.stop = stop;
+		function stop() {}
+		this.start = start;
+		this.stop = stop;
 	};
 })();
