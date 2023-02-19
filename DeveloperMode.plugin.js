@@ -1,7 +1,7 @@
 /**
  * @name DeveloperMode
  * @author DEATHB4DEFEAT
- * @version 1.2.1
+ * @version 1.3.0
  * @description Makes you able to view the special Discord developer options.
  * @source https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js
  * @updateUrl https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js
@@ -17,7 +17,7 @@ module.exports = (() => {
 					name: 'DEATHB4DEFEAT',
 				},
 			],
-			version: '1.2.1',
+			version: '1.2.0',
 			description: 'Makes you able to view the special Discord developer options.',
 			github: 'https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js',
 			github_raw: 'https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js',
@@ -26,14 +26,20 @@ module.exports = (() => {
 
 	return function () {
 		function start() {
-			window.___wp = function (e) {
-				let id = e.c[Object.keys(e.c).find((k) => e.c[k]?.exports?.default?.isDeveloper === false)];
-				if (id) Object.defineProperty(id.exports.default, 'isDeveloper', { get: () => true });
-				delete window.___wp;
-			};
-			webpackChunkdiscord_app.push([['wp_isdev_patch'], {}, window.___wp]);
+			let wpRequire;
+			window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
+			mod = Object.values(wpRequire.c).find(x => typeof x?.exports?.Z?.isDeveloper !== "undefined");
+			usermod = Object.values(wpRequire.c).find(x => x?.exports?.default?.getUsers)
+			nodes = Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes)
+			try {
+				nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user: {flags: 1}})
+			} catch (e) {}
+			oldGetUser = usermod.exports.default.__proto__.getCurrentUser;
+			usermod.exports.default.__proto__.getCurrentUser = () => ({isStaff: () => true})
+			nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]()
+			usermod.exports.default.__proto__.getCurrentUser = oldGetUser
 		}
-		function stop() {}
+		function stop() { }
 		this.start = start;
 		this.stop = stop;
 	};
