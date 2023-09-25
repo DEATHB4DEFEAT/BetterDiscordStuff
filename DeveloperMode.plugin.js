@@ -17,7 +17,7 @@ module.exports = (() => {
 					name: 'DEATHB4DEFEAT',
 				},
 			],
-			version: '1.2.0',
+			version: '1.3.0',
 			description: 'Makes you able to view the special Discord developer options.',
 			github: 'https://github.com/DEATHB4DEFEAT/BetterDiscordStuff/blob/main/DeveloperMode.plugin.js',
 			github_raw: 'https://raw.githubusercontent.com/DEATHB4DEFEAT/BetterDiscordStuff/master/DeveloperMode.plugin.js',
